@@ -117,7 +117,56 @@ footer{padding:40px 0;display:flex;justify-content:space-between;align-items:cen
   .contact-block{padding:26px}
   footer{flex-direction:column;gap:8px;align-items:flex-start}
 }
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+/* ===== Framer-style motion ===== */
+.hero{position:relative}
+.hero::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:680px;height:420px;background:radial-gradient(ellipse at center,rgba(200,240,96,0.10),transparent 68%);filter:blur(20px);pointer-events:none;z-index:-1;opacity:0;animation:glowIn 1.6s ease forwards .2s}
+@keyframes glowIn{to{opacity:1}}
+
+/* hero staggered entrance */
+.hero .eyebrow,.hero h1,.hero .hero-sub,.hero .cta-group{opacity:0;transform:translateY(18px);animation:heroUp .8s cubic-bezier(.22,.61,.36,1) forwards}
+.hero .eyebrow{animation-delay:.15s}
+.hero h1{animation-delay:.28s}
+.hero .hero-sub{animation-delay:.46s}
+.hero .cta-group{animation-delay:.62s}
+@keyframes heroUp{to{opacity:1;transform:translateY(0)}}
+
+/* scroll reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal.d1{transition-delay:.08s}
+.reveal.d2{transition-delay:.16s}
+.reveal.d3{transition-delay:.24s}
+.reveal.d4{transition-delay:.32s}
+
+/* stakes pop */
+.stake{transition:transform .4s cubic-bezier(.22,.61,.36,1)}
+.stakes:hover .stake{transform:scale(.99)}
+.stake:hover{transform:scale(1.02)!important;z-index:2}
+
+/* card hover lifts */
+.service{transition:transform .35s cubic-bezier(.22,.61,.36,1),background .25s}
+.service:hover{transform:translateY(-4px);background:#1c1c1c}
+.why-item{transition:transform .3s cubic-bezier(.22,.61,.36,1),background .25s}
+.why-item:hover{transform:translateX(4px);background:#1d1d1d}
+.cred-name{transition:transform .3s cubic-bezier(.22,.61,.36,1),border-color .18s,background .25s}
+.cred-name:hover{transform:translateY(-3px);background:#1c1c1c}
+.lvl-btn{will-change:transform}
+
+/* diagnosis crossfade */
+.diag-detail{transition:opacity .32s ease}
+.diag-detail.swapping{opacity:0}
+
+/* button shimmer on primary */
+.btn-primary{position:relative;overflow:hidden}
+.btn-primary::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .6s ease}
+.btn-primary:hover::after{left:140%}
+
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  .reveal{opacity:1;transform:none}
+  .hero .eyebrow,.hero h1,.hero .hero-sub,.hero .cta-group{opacity:1;transform:none}
+  .hero::before{opacity:1}
+}
 </style>
 </head>
 <body>
@@ -138,7 +187,7 @@ footer{padding:40px 0;display:flex;justify-content:space-between;align-items:cen
     </div>
   </div>
 </div>
-<div class="stakes">
+<div class="stakes reveal">
   <div class="stake">
     <div class="stake-num">20-40%</div>
     <div class="stake-label">Revenue partner-sourced at mature B2B SaaS companies with a real channel motion. Timelines and outcomes vary by category and stage.</div>
@@ -149,20 +198,17 @@ footer{padding:40px 0;display:flex;justify-content:space-between;align-items:cen
   </div>
 </div>
 <div class="container">
-  <section id="diagnose">
+  <section id="diagnose"><div class="reveal">
     <p class="section-label">Self-diagnosis</p>
     <h2>Where is your channel today?</h2>
     <p class="lead">Pick the level that matches your reality. Each one shows what it is costing you and what the next move looks like.</p>
-    <div class="diag-track" id="track"></div>
-    <div class="diag-detail" id="detail"></div>
+    </div><div class="reveal d1"><div class="diag-track" id="track"></div>
+    <div class="diag-detail" id="detail"></div></div>
   </section>
 </div>
 <div class="container">
-  <section id="services">
-    <p class="section-label">Services</p>
-    <h2>Two ways to close the gap</h2>
-    <p class="lead">What you need depends on the stage: a plan your team can build on, or an operator to run the channel for you.</p>
-    <div class="services-grid">
+  <section id="services"><div class="reveal"><p class="section-label">Services</p><h2>Two ways to close the gap</h2><p class="lead">What you need depends on the stage: a plan your team can build on, or an operator to run the channel for you.</p></div>
+    <div class="services-grid reveal d1">
       <div class="service">
         <p class="service-tag">Project</p>
         <h3>Channel Strategy Development</h3>
@@ -192,11 +238,8 @@ footer{padding:40px 0;display:flex;justify-content:space-between;align-items:cen
   </section>
 </div>
 <div class="container">
-  <section id="why">
-    <p class="section-label">Why work with me</p>
-    <h2>A channel decision, de-risked</h2>
-    <p class="lead">Most companies face the same question: build the channel in-house, hire for it, or bring in help. A focused engagement lets you get the direction right and the motion moving before you commit to permanent headcount.</p>
-    <ul class="why-list">
+  <section id="why"><div class="reveal"><p class="section-label">Why work with me</p><h2>A channel decision, de-risked</h2><p class="lead">Most companies face the same question: build the channel in-house, hire for it, or bring in help. A focused engagement lets you get the direction right and the motion moving before you commit to permanent headcount.</p></div>
+    <ul class="why-list reveal d1">
       <li class="why-item">
         <span class="why-mark">01</span>
         <span class="why-text"><strong>Clarity before commitment.</strong> Which partner types fit your product and market, and which to pursue first. A clear target beats a strong hire starting from a blank page.</span>
@@ -213,16 +256,13 @@ footer{padding:40px 0;display:flex;justify-content:space-between;align-items:cen
   </section>
 </div>
 <div class="container">
-  <section id="background">
-    <p class="section-label">Why me</p>
-    <h2>Both sides of the channel</h2>
-    <p class="lead">Most channel advisors have seen one side. I have run partner programs from both, which is why the strategy holds up when partners actually have to act on it.</p>
-    <ul class="edge-list">
+  <section id="background"><div class="reveal"><p class="section-label">Why me</p><h2>Both sides of the channel</h2><p class="lead">Most channel advisors have seen one side. I have run partner programs from both, which is why the strategy holds up when partners actually have to act on it.</p></div>
+    <ul class="edge-list reveal d1">
       <li class="edge-item"><span class="edge-mark">+</span><span class="why-text"><strong>Vendor side.</strong> Built and managed partner programs, alliances and co-sell motions for software and infrastructure vendors across Benelux and EMEA North.</span></li>
       <li class="edge-item"><span class="edge-mark">+</span><span class="why-text"><strong>Partner side.</strong> Ran the vendor relationship from within a large IT partner, so I know what makes a partner invest in a program, and what makes them ignore it.</span></li>
       <li class="edge-item"><span class="edge-mark">+</span><span class="why-text"><strong>Strategy, grounded.</strong> Recommendations are shaped by years of running these motions, not by a framework applied from the outside.</span></li>
     </ul>
-    <div class="cred-strip">
+    <div class="cred-strip reveal d2">
       <span class="cred-name">Cisco<small>Vendor</small></span>
       <span class="cred-name">NTT DATA<small>Partner</small></span>
       <span class="cred-name">SAS<small>Vendor</small></span>
@@ -230,10 +270,8 @@ footer{padding:40px 0;display:flex;justify-content:space-between;align-items:cen
   </section>
 </div>
 <div class="container">
-  <section id="contact" style="border-bottom:none">
-    <p class="section-label">Contact</p>
-    <h2>Find out what your channel is worth</h2>
-    <div class="contact-block">
+  <section id="contact" style="border-bottom:none"><div class="reveal"><p class="section-label">Contact</p><h2>Find out what your channel is worth</h2></div>
+    <div class="contact-block reveal d1">
       <p>A 30 minute call is enough to place your channel on the model above and size the opportunity. No pitch, no strings.</p>
       <div class="contact-links">
         <a href="mailto:contact@mdbnext.com?subject=Channel%20strategy%20%2F%20interim%20enquiry" class="contact-link">
@@ -287,14 +325,19 @@ function render(i){
   active=i;
   document.querySelectorAll(".lvl-btn").forEach((b,x)=>b.classList.toggle("active",x===i));
   const L=LEVELS[i];
+  const detail=document.getElementById("detail");
   const move=L.move
     ?'<div class="move-box"><p class="move-target">'+L.move.t+'</p><p class="move-desc">'+L.move.d+'</p></div><a href="#contact" class="diag-cta">Discuss your level &rarr;</a>'
     :'<p class="no-move">The channel runs at full maturity. The job is to protect and optimise what has been built.</p>';
-  document.getElementById("detail").innerHTML=
+  const html=
     '<div class="dd-top"><div><p class="dd-label">Level '+L.num+'</p><p class="dd-title">'+L.name+'</p><p class="dd-desc">'+L.desc+'</p></div>'+
     '<span class="pill" style="background:'+L.pillBg+';color:'+L.pillColor+'">'+L.pill+'</span></div>'+
     '<div class="dd-bottom"><div class="dd-col"><p class="col-label">What it costs you</p><p class="cost-text">'+L.cost+'</p></div>'+
     '<div class="dd-col"><p class="col-label">'+(L.move?"The move":"Where you are")+'</p>'+move+'</div></div>';
+  const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(reduce||!detail.innerHTML.trim()){detail.innerHTML=html;return;}
+  detail.classList.add('swapping');
+  setTimeout(function(){detail.innerHTML=html;detail.classList.remove('swapping');},180);
 }
 const track=document.getElementById("track");
 LEVELS.forEach(function(L,i){
@@ -305,6 +348,49 @@ LEVELS.forEach(function(L,i){
   track.appendChild(b);
 });
 render(0);
+
+/* ===== scroll reveal + count-up ===== */
+(function(){
+  const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(reduce){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});return;}
+
+  const io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        if(e.target.classList.contains('stakes'))runCounts();
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.18,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+  let counted=false;
+  function runCounts(){
+    if(counted)return;counted=true;
+    document.querySelectorAll('.stake-num').forEach(function(el){
+      const raw=el.textContent.trim();
+      const m=raw.match(/(\d+)(?:-(\d+))?(.*)/);
+      if(!m)return;
+      const start=0,end=parseInt(m[2]||m[1],10),lo=m[2]?parseInt(m[1],10):null,suffix=m[3]||'';
+      const dur=1100,t0=performance.now();
+      function tick(now){
+        const p=Math.min((now-t0)/dur,1);
+        const eased=1-Math.pow(1-p,3);
+        const cur=Math.round(eased*end);
+        if(lo!==null){
+          const curLo=Math.round(eased*lo);
+          el.textContent=curLo+'-'+cur+suffix;
+        }else{
+          el.textContent=cur+suffix;
+        }
+        if(p<1)requestAnimationFrame(tick);
+        else el.textContent=raw;
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+})();
 </script>
 </body>
 </html>
