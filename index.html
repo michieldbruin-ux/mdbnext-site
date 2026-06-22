@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michiel de Bruin — Channel &amp; Partner Specialist</title>
+<meta name="description" content="Channel strategy for B2B tech vendors, from someone who has run the channel. Interim partner management or channel strategy project. Benelux and EMEA North.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0c0c0c;--bg2:#161616;--bg3:#202020;
+  --border:rgba(255,255,255,0.09);--border2:rgba(255,255,255,0.16);
+  --text:#f1eee9;--muted:#b8b5b0;--muted2:#d4d1cc;
+  --accent:#c8f060;--accent-dim:rgba(200,240,96,0.12);--warn:#EF9F27;
+  --mono:'DM Mono',monospace;--sans:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.container{max-width:760px;margin:0 auto;padding:0 24px}
+nav{padding:26px 0;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.04em}
+.nav-cta{font-family:var(--mono);font-size:12px;color:var(--accent);border:1px solid rgba(200,240,96,.3);padding:8px 16px;border-radius:4px;transition:background .15s}
+.nav-cta:hover{background:var(--accent-dim)}
+.hero{padding:72px 0 80px;border-bottom:1px solid var(--border)}
+.eyebrow{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:26px}
+h1{font-size:clamp(34px,5.5vw,56px);font-weight:300;line-height:1.13;letter-spacing:-.02em;margin-bottom:26px;color:var(--text)}
+h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{font-size:18px;color:var(--muted2);max-width:540px;line-height:1.7;margin-bottom:44px}
+.cta-group{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.btn-primary{background:var(--accent);color:#0c0c0c;font-family:var(--mono);font-size:13px;font-weight:500;padding:14px 26px;border-radius:4px;transition:opacity .15s}
+.btn-primary:hover{opacity:.88}
+.btn-secondary-alt{background:transparent;color:var(--accent);border:1px solid rgba(200,240,96,.4);transition:background .15s,border-color .15s}
+.btn-secondary-alt:hover{background:var(--accent-dim);border-color:rgba(200,240,96,.7);opacity:1}
+.stakes{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stake{background:#111111;padding:40px 24px;text-align:center}
+.stake-num{font-size:38px;font-weight:300;letter-spacing:-.02em;color:var(--accent);line-height:1;margin-bottom:14px}
+.stake-num.dim{color:var(--text)}
+.stake-label{font-size:13px;color:var(--muted);line-height:1.55}
+section{padding:72px 0;border-bottom:1px solid var(--border)}
+.section-label{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
+h2{font-size:28px;font-weight:400;letter-spacing:-.01em;margin-bottom:14px;line-height:1.3}
+.lead{color:var(--muted2);font-size:15px;max-width:540px;line-height:1.7}
+.diag-track{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:36px 0 8px}
+.lvl-btn{position:relative;background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:14px 10px 12px;cursor:pointer;transition:border-color .18s,background .18s,box-shadow .18s,transform .18s;display:flex;flex-direction:column;gap:7px;text-align:left;font-family:inherit}
+.lvl-btn:hover{border-color:var(--border2);background:var(--bg3)}
+.lvl-btn.active{border-color:var(--accent);background:var(--bg3);box-shadow:0 0 0 1px var(--accent),0 6px 20px rgba(0,0,0,.35);transform:translateY(-2px)}
+.lvl-btn.active .lvl-num{color:var(--accent)}
+.lvl-btn.active::after{content:'';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:2px;height:8px;background:var(--accent)}
+.lvl-num{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.04em;transition:color .18s}
+.lvl-name{font-size:12.5px;font-weight:500;color:var(--text);line-height:1.2}
+.lvl-bar{height:2px;width:100%;border-radius:1px;margin-top:3px;transition:opacity .18s}
+.lvl-btn:not(.active) .lvl-bar{opacity:.4}
+.diag-detail{background:#181818;border:1px solid var(--border);border-radius:13px;overflow:hidden}
+.dd-top{padding:30px 30px 26px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start;border-bottom:1px solid var(--border)}
+.dd-label{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.dd-title{font-size:21px;font-weight:400;letter-spacing:-.01em;color:var(--text);line-height:1.2;margin-bottom:8px}
+.dd-desc{font-size:14px;color:var(--muted2);line-height:1.65;max-width:440px}
+.pill{font-family:var(--mono);font-size:10px;font-weight:500;padding:6px 12px;border-radius:20px;white-space:nowrap;letter-spacing:.04em;flex-shrink:0}
+.dd-bottom{display:grid;grid-template-columns:1fr 1fr}
+.dd-col{padding:26px 30px}
+.dd-col:first-child{border-right:1px solid var(--border)}
+.col-label{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+.cost-text{font-size:14px;color:var(--muted2);line-height:1.6}
+.cost-text strong{color:var(--text);font-weight:500}
+.move-box{background:var(--bg3);border-radius:8px;padding:15px 16px}
+.move-target{font-size:13px;font-weight:500;color:var(--accent);margin-bottom:6px}
+.move-desc{font-size:12.5px;color:var(--muted2);line-height:1.55}
+.no-move{font-size:13px;color:var(--muted);line-height:1.6}
+.diag-cta{display:inline-block;margin-top:16px;font-family:var(--mono);font-size:12px;color:var(--accent);border:1px solid rgba(200,240,96,.4);padding:9px 16px;border-radius:4px;transition:background .15s,border-color .15s}
+.diag-cta:hover{background:var(--accent-dim);border-color:rgba(200,240,96,.7)}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-top:36px}
+.service{background:#181818;padding:34px 30px;display:flex;flex-direction:column}
+.service .svc-list{flex:1}
+.service-tag{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.service-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.service h3{font-size:18px;font-weight:400;margin-bottom:14px;letter-spacing:-.01em;line-height:1.3;color:var(--text)}
+.service p{font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:22px}
+.svc-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.svc-list li{font-family:var(--sans);font-size:14px;color:var(--muted2);line-height:1.55;display:flex;align-items:baseline;gap:9px}
+.svc-list li::before{content:'+';font-family:var(--mono);color:var(--accent);flex-shrink:0}
+.svc-dur{margin-top:24px;padding-top:18px;border-top:1px solid var(--border);font-family:var(--sans);font-size:13px;color:var(--muted2);letter-spacing:.01em;line-height:1.5;min-height:60px}
+.why-list{list-style:none;margin-top:32px;display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.why-item{background:#181818;padding:22px 26px;display:flex;gap:18px;align-items:baseline}
+.why-mark{font-family:var(--mono);font-size:12px;color:var(--accent);flex-shrink:0;min-width:24px}
+.why-text{font-size:14.5px;color:var(--muted2);line-height:1.6}
+.why-text strong{color:var(--text);font-weight:500}
+.cred-strip{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px;align-items:stretch}
+.edge-list{list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:14px}
+.edge-item{display:flex;gap:12px;align-items:baseline}
+.edge-mark{font-family:var(--mono);font-size:14px;color:var(--accent);flex-shrink:0}
+.cred-name{flex:1;min-width:140px;text-align:center;background:#181818;border:1px solid var(--border);border-radius:8px;padding:24px 20px;font-family:var(--mono);font-size:16px;font-weight:500;color:var(--text);letter-spacing:.02em;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;transition:border-color .18s}
+.cred-name:hover{border-color:var(--border2)}
+.cred-name small{font-size:10px;font-weight:400;color:var(--accent);letter-spacing:.1em;text-transform:uppercase}
+.contact-block{margin-top:32px;background:#181818;border:1px solid var(--border);border-radius:8px;padding:38px;display:flex;flex-direction:column;gap:22px}
+.contact-block p{font-size:17px;color:var(--muted2);max-width:480px;line-height:1.7}
+.contact-links{display:flex;gap:24px;flex-wrap:wrap}
+.contact-link{font-family:var(--mono);font-size:13px;color:var(--accent);display:flex;align-items:center;gap:6px;transition:opacity .15s}
+.contact-link:hover{opacity:.7}
+footer{padding:40px 0;display:flex;justify-content:space-between;align-items:center}
+.footer-name{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.footer-kvk{font-family:var(--mono);font-size:11px;color:var(--muted)}
+@media(max-width:600px){
+  .stakes{grid-template-columns:1fr}
+  .diag-track{grid-template-columns:repeat(5,1fr);gap:4px}
+  .lvl-name{font-size:10.5px}
+  .dd-top{grid-template-columns:1fr;gap:12px}
+  .dd-bottom{grid-template-columns:1fr}
+  .dd-col:first-child{border-right:none;border-bottom:1px solid var(--border)}
+  .dd-col{padding:20px}
+  .dd-top{padding:20px}
+  .services-grid{grid-template-columns:1fr}
+  h1{font-size:32px}
+  .contact-block{padding:26px}
+  footer{flex-direction:column;gap:8px;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav>
+    <span class="logo">MDB / Next</span>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+  </nav>
+</div>
+<div class="container">
+  <div class="hero">
+    <p class="eyebrow">Channel strategy, from the field</p>
+    <h1>Build the partner channel,<br>or <em>fix the one that<br>isn't working.</em></h1>
+    <p class="hero-sub">For B2B tech vendors, a working partner channel can become a meaningful share of revenue. I help you choose the right partner model and sequence the build, or step in to run the channel for a defined period.</p>
+    <div class="cta-group">
+      <a href="#diagnose" class="btn-primary">Diagnose your channel</a>
+      <a href="#services" class="btn-primary btn-secondary-alt">Interim available</a>
+    </div>
+  </div>
+</div>
+<div class="stakes">
+  <div class="stake">
+    <div class="stake-num">20-40%</div>
+    <div class="stake-label">Revenue partner-sourced at mature B2B SaaS companies with a real channel motion. Timelines and outcomes vary by category and stage.</div>
+  </div>
+  <div class="stake">
+    <div class="stake-num dim">6+ mo</div>
+    <div class="stake-label">To hire a Head of Partnerships and hope they build a program from scratch</div>
+  </div>
+</div>
+<div class="container">
+  <section id="diagnose">
+    <p class="section-label">Self-diagnosis</p>
+    <h2>Where is your channel today?</h2>
+    <p class="lead">Pick the level that matches your reality. Each one shows what it is costing you and what the next move looks like.</p>
+    <div class="diag-track" id="track"></div>
+    <div class="diag-detail" id="detail"></div>
+  </section>
+</div>
+<div class="container">
+  <section id="services">
+    <p class="section-label">Services</p>
+    <h2>Two ways to close the gap</h2>
+    <p class="lead">What you need depends on the stage: a plan your team can build on, or an operator to run the channel for you.</p>
+    <div class="services-grid">
+      <div class="service">
+        <p class="service-tag">Project</p>
+        <h3>Channel Strategy Development</h3>
+        <p>Whether you are starting from zero or ready for the next step, I map where you stand, design the program with you, and hand over a blueprint your team can act on.</p>
+        <ul class="svc-list">
+          <li>Current channel assessment: where you stand and what is realistic</li>
+          <li>The sequence: what to build first, and what comes later</li>
+          <li>Which partner types fit your product and market: SI, VAR, distributor, MSP</li>
+          <li>Route to market and the business case for partner revenue</li>
+          <li>A roadmap your team can execute</li>
+        </ul>
+        <p class="svc-dur">Engagement: up to 3 months &middot; fixed milestones</p>
+      </div>
+      <div class="service">
+        <p class="service-tag">Interim</p>
+        <h3>Interim Partner &amp; Channel Management</h3>
+        <p>You need someone to own partner revenue for a defined period, whether covering a gap, a leave, or a peak. I step in operational from day one and keep the channel moving.</p>
+        <ul class="svc-list">
+          <li>Partner pipeline &amp; deal management</li>
+          <li>Partner enablement &amp; onboarding</li>
+          <li>Co-sell execution with sales and marketing</li>
+          <li>Performance tracking &amp; reporting</li>
+        </ul>
+        <p class="svc-dur">Engagement: up to 6 months &middot; flexible scope</p>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="container">
+  <section id="why">
+    <p class="section-label">Why work with me</p>
+    <h2>A channel decision, de-risked</h2>
+    <p class="lead">Most companies face the same question: build the channel in-house, hire for it, or bring in help. A focused engagement lets you get the direction right and the motion moving before you commit to permanent headcount.</p>
+    <ul class="why-list">
+      <li class="why-item">
+        <span class="why-mark">01</span>
+        <span class="why-text"><strong>Clarity before commitment.</strong> Which partner types fit your product and market, and which to pursue first. A clear target beats a strong hire starting from a blank page.</span>
+      </li>
+      <li class="why-item">
+        <span class="why-mark">02</span>
+        <span class="why-text"><strong>The right help for the phase.</strong> Setting strategy and running the channel day to day are different jobs. I can do either: a roadmap your team executes, or hands-on ownership for a defined period.</span>
+      </li>
+      <li class="why-item">
+        <span class="why-mark">03</span>
+        <span class="why-text"><strong>Momentum without the wait.</strong> Recruiting a permanent lead takes months. An engagement gets the channel moving now, so the eventual hire walks into something that already works.</span>
+      </li>
+    </ul>
+  </section>
+</div>
+<div class="container">
+  <section id="background">
+    <p class="section-label">Why me</p>
+    <h2>Both sides of the channel</h2>
+    <p class="lead">Most channel advisors have seen one side. I have run partner programs from both, which is why the strategy holds up when partners actually have to act on it.</p>
+    <ul class="edge-list">
+      <li class="edge-item"><span class="edge-mark">+</span><span class="why-text"><strong>Vendor side.</strong> Built and managed partner programs, alliances and co-sell motions for software and infrastructure vendors across Benelux and EMEA North.</span></li>
+      <li class="edge-item"><span class="edge-mark">+</span><span class="why-text"><strong>Partner side.</strong> Ran the vendor relationship from within a large IT partner, so I know what makes a partner invest in a program, and what makes them ignore it.</span></li>
+      <li class="edge-item"><span class="edge-mark">+</span><span class="why-text"><strong>Strategy, grounded.</strong> Recommendations are shaped by years of running these motions, not by a framework applied from the outside.</span></li>
+    </ul>
+    <div class="cred-strip">
+      <span class="cred-name">Cisco<small>Vendor</small></span>
+      <span class="cred-name">NTT DATA<small>Partner</small></span>
+      <span class="cred-name">SAS<small>Vendor</small></span>
+    </div>
+  </section>
+</div>
+<div class="container">
+  <section id="contact" style="border-bottom:none">
+    <p class="section-label">Contact</p>
+    <h2>Find out what your channel is worth</h2>
+    <div class="contact-block">
+      <p>A 30 minute call is enough to place your channel on the model above and size the opportunity. No pitch, no strings.</p>
+      <div class="contact-links">
+        <a href="mailto:contact@mdbnext.com?subject=Channel%20strategy%20%2F%20interim%20enquiry" class="contact-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          contact@mdbnext.com
+        </a>
+        <a href="https://linkedin.com/in/michiel-de-bruin" target="_blank" rel="noopener" class="contact-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="container">
+  <footer>
+    <span class="footer-name">mdbnext.com</span>
+    <span class="footer-kvk">KvK 42063101</span>
+  </footer>
+</div>
+<script>
+const LEVELS=[
+  {num:1,name:"No channel",color:"#E24B4A",
+   desc:"Everything runs through your direct sales team. No partners, no program, no one owns it.",
+   pill:"Channel Strategy Development",pillBg:"rgba(55,138,221,.15)",pillColor:"#85B7EB",
+   cost:"<strong>You pay full acquisition cost on every deal.</strong> Competitors with partners reach buyers and markets you would need to staff for directly. Every quarter the channel stays closed, that reach compounds in their favour.",
+   move:{t:"Next move to Structured",d:"Set the strategy: which partner types fit, which markets, and in what order to build."}},
+  {num:2,name:"Ad hoc",color:"#EF9F27",
+   desc:"A few partner deals happen, driven by personal relationships. Nothing is structured or repeatable.",
+   pill:"Channel Strategy Development",pillBg:"rgba(55,138,221,.15)",pillColor:"#85B7EB",
+   cost:"<strong>Your best partner deals are accidents.</strong> They depend on individuals, not a program, so they never compound. The moment a relationship cools, the revenue disappears with it.",
+   move:{t:"Next move to Structured",d:"Formalise agreements, define which partner types to pursue, and build the foundation for a repeatable program."}},
+  {num:3,name:"Structured",color:"#BA7517",
+   desc:"A formal program exists on paper. Tiers and contracts are in place, but partner revenue stays low.",
+   pill:"Interim or Project",pillBg:"rgba(186,117,23,.15)",pillColor:"#EF9F27",
+   cost:"<strong>You built the program but it is not producing.</strong> Under 20 percent partner-sourced, no consistent co-sell. The structure is sunk cost until someone activates it and drives deals through it.",
+   move:{t:"Next move to Performing",d:"Activate the program: drive partner-sourced pipeline, launch co-sell, and make enablement consistent."}},
+  {num:4,name:"Performing",color:"#1D9E75",
+   desc:"Partners actively generate pipeline. Enablement works. Channel revenue is measurable and growing.",
+   pill:"Interim Partner Management",pillBg:"rgba(29,158,117,.15)",pillColor:"#5DCAA5",
+   cost:"<strong>It works, but it still runs on you.</strong> 20 to 40 percent partner-sourced, yet not yet a system that scales without constant hands-on management. The risk now is plateau, not absence.",
+   move:{t:"Next move to Scalable",d:"Systematise what works, expand to new partner segments, and build the team to run it independently."}},
+  {num:5,name:"Scalable",color:"#0F6E56",
+   desc:"The channel is a self-sustaining growth engine. Partner revenue is significant, reliable, and compounding.",
+   pill:"No engagement needed",pillBg:"rgba(255,255,255,.06)",pillColor:"#8a8884",
+   cost:"<strong>You are where most companies want to be.</strong> 40 percent or more partner-sourced, a dedicated partner function, new segments activated independently. This is the destination, and you are already here.",
+   move:null}
+];
+let active=0;
+function render(i){
+  active=i;
+  document.querySelectorAll(".lvl-btn").forEach((b,x)=>b.classList.toggle("active",x===i));
+  const L=LEVELS[i];
+  const move=L.move
+    ?'<div class="move-box"><p class="move-target">'+L.move.t+'</p><p class="move-desc">'+L.move.d+'</p></div><a href="#contact" class="diag-cta">Discuss your level &rarr;</a>'
+    :'<p class="no-move">The channel runs at full maturity. The job is to protect and optimise what has been built.</p>';
+  document.getElementById("detail").innerHTML=
+    '<div class="dd-top"><div><p class="dd-label">Level '+L.num+'</p><p class="dd-title">'+L.name+'</p><p class="dd-desc">'+L.desc+'</p></div>'+
+    '<span class="pill" style="background:'+L.pillBg+';color:'+L.pillColor+'">'+L.pill+'</span></div>'+
+    '<div class="dd-bottom"><div class="dd-col"><p class="col-label">What it costs you</p><p class="cost-text">'+L.cost+'</p></div>'+
+    '<div class="dd-col"><p class="col-label">'+(L.move?"The move":"Where you are")+'</p>'+move+'</div></div>';
+}
+const track=document.getElementById("track");
+LEVELS.forEach(function(L,i){
+  const b=document.createElement("button");
+  b.className="lvl-btn"+(i===0?" active":"");
+  b.innerHTML='<span class="lvl-num">L'+L.num+'</span><span class="lvl-name">'+L.name+'</span><div class="lvl-bar" style="background:'+L.color+'"></div>';
+  b.onclick=function(){render(i)};
+  track.appendChild(b);
+});
+render(0);
+</script>
+</body>
+</html>
